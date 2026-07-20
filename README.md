@@ -7,6 +7,8 @@ debugging enabled" notification**.
 
 Source, issues & builds: **https://github.com/Bouteillepleine/DuckUSB**
 
+![DuckUSB UI](https://raw.githubusercontent.com/Xposed-Modules-Repo/com.strawing.duckusb/master/screenshot.png)
+
 ## How it works
 
 Detection apps (banking, MDM/Intune, games, integrity checks) don't read any real
