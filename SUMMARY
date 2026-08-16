@@ -1,1 +1,1 @@
-One hook in system_server makes every app read USB debugging, wireless debugging and Developer Options as off — with a list of exactly who was lied to.
+One hook in system_server makes every app see USB debugging as off.
