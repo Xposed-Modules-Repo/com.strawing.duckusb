@@ -1,1 +1,1 @@
-Makes apps read USB/wireless debugging and Developer Options as off while they stay on. One hook in system_server covers every app, with a diagnostics list of exactly who was lied to.
+One hook in system_server makes every app read USB debugging, wireless debugging and Developer Options as off — with a list of exactly who was lied to.
