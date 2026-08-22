@@ -22,11 +22,13 @@ Detection apps don't read any real adb state — they query the settings provide
 
 A diagnostics card lists **every caller that was lied to since boot**, so a mis-scoped module can't masquerade as a working one.
 
+**DuckUSB never lies to itself.** LSPosed loads a module into its own process whether or not you scope it, so DuckUSB used to spoof its own UI — the readings card showed `adb_enabled 0` on a device where it was `1`. Both halves now skip our own package, which also removes an inline libc hook from a process that never needed one.
+
 ## Toggles
 
 Pause (live, stops everything) · Spoof USB debugging · Framework mode · Per-app spoof · Hide notification · Verbose logging.
 
-Property spoofing is automatic in scoped apps — property reads are process-local, so it only works in apps you scope.
+Property spoofing is automatic in scoped apps (except DuckUSB itself) — property reads are process-local, so it only works in apps you scope. All three bionic read routes are covered: by name, and by handle through both `__system_property_read_callback` and the legacy `__system_property_read`, so a property can't read spoofed one way and truthful another.
 
 ## Tested on
 
